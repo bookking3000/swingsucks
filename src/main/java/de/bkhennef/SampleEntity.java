@@ -40,15 +40,5 @@ public class SampleEntity {
         this.content = content;
     }
 
-    public static void loadAll() throws SQLException {
-        Statement statement = DBConn.getConnection().createStatement(
-                ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
 
-        ResultSet rs = statement.executeQuery("SELECT * FROM users");
-
-        while (rs.next()) {
-            String name = rs.getString(2);
-            String content = rs.getString(3);
-        }
-    }
 }
